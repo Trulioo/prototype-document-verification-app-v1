@@ -1,0 +1,243 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="5dp"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/topButtons"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <Button
+            android:id="@+id/buttonPassport"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tabunderline"
+            android:onClick="passportCardWithFacialButtonPressed"
+            android:text="@string/passport"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/buttonDriver"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/TruliooBlue"
+            android:onClick="driverCardWithFacialButtonPressed"
+            android:text="@string/driver_license"
+            android:textColor="@color/TruliooBackground"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <!--
+        <Button
+            android:id="@+id/buttonMedical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_weight="0"
+            android:onClick="medicalCardButtonPressed"
+            android:text="@string/medical_insurance"
+            android:textSize="11sp"
+            android:visibility="gone" /> -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cardImagesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:selectAllOnFocus="true"
+            android:singleLine="false"
+            android:textColor="@color/TruliooBlue"
+            android:textColorHint="@color/TruliooBlue"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:selectAllOnFocus="true"
+            android:singleLine="false"
+            android:textColor="@color/TruliooBlue"
+            android:textColorHint="@color/TruliooBlue"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/loginButton"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/TruliooBlue"
+            android:elevation="8dp"
+            android:onClick="truliooLogin"
+            android:text="Login"
+            android:textSize="18sp"
+            android:translationZ="8dp" />
+
+        <EditText
+            android:id="@+id/editTextFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/first_name"
+            android:inputType="textCapSentences"
+            android:selectAllOnFocus="true"
+            android:singleLine="false"
+            android:textColor="@color/TruliooBlue"
+            android:textColorHint="@color/TruliooBlue"
+            android:textSize="14sp"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/editTextSecond"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/second_name"
+            android:inputType="textCapSentences"
+            android:selectAllOnFocus="true"
+            android:singleLine="false"
+            android:textColor="@color/TruliooBlue"
+            android:textColorHint="@color/TruliooBlue"
+            android:textSize="14sp"
+            android:visibility="invisible" />
+
+        <Spinner
+            android:id="@+id/spinnerCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/TruliooBlue"
+            android:textColor="@color/TruliooBlue"
+            android:visibility="invisible" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutFrontImage"
+            android:layout_width="@dimen/card_frame_width"
+            android:layout_height="@dimen/card_frame_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border_card_image"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/frontImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="false"
+                android:contentDescription="@string/tap_to_capture"
+                android:cropToPadding="false"
+                android:onClick="frontSideCapturePressed"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/txtTapToCaptureFront"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:hint="@string/tap_to_capture"
+                android:text="@string/tap_to_capture"
+                android:textColor="@color/TruliooBlue"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutBackImage"
+            android:layout_width="@dimen/card_frame_width"
+            android:layout_height="@dimen/card_frame_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/backImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_card_image"
+                android:contentDescription="@string/tap_to_capture_back_side_optional_"
+                android:onClick="backSideCapturePressed"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/txtTapToCaptureBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:hint="@string/tap_to_capture_back_side_optional_"
+                android:text="@string/tap_to_capture_back_side_optional_"
+                android:textColor="@color/TruliooBlue"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/progressbar"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/processCardButton"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/TruliooBlue"
+            android:elevation="8dp"
+            android:onClick="initiateTruliooProcessing"
+            android:text="@string/process"
+            android:textSize="18sp"
+            android:translationZ="8dp"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</LinearLayout>

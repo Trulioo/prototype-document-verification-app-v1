@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="artifacts:acuantMobileSDK">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/acuantMobileSDK.aar/1fc5d727a5a4504ed09bdc0f5c21fbc4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/acuantMobileSDK.aar/1fc5d727a5a4504ed09bdc0f5c21fbc4/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
